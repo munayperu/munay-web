@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Munay · Consultoría de marketing y métricas para pymes</title>
+<meta name="description" content="Munay ayuda a pequeñas y medianas empresas a crecer de forma orgánica con estrategia de marketing basada en datos.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          profundo: { DEFAULT: '#123C3A', light: '#1B5450', dark: '#0B2726' },
+          oliva:    { DEFAULT: '#9BAF9D', light: '#B4C4B5', dark: '#7E9581' },
+          lavanda:  { DEFAULT: '#B7AAC9', light: '#CBC1D9', dark: '#9C8CB4' },
+          durazno:  { DEFAULT: '#E7B79A', light: '#F0CDB6', dark: '#DB9E77' },
+          marfil:   { DEFAULT: '#F7F4EE', dark: '#EEE8DC' },
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          body: ['"Work Sans"', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Work Sans', sans-serif; }
+  h1, h2, h3, .font-display { font-family: 'Fraunces', serif; }
+
+  /* Anillo orgánico de crecimiento — elemento de firma */
+  .ring-rotate { animation: ring-spin 60s linear infinite; transform-origin: 50% 50%; }
+  .ring-rotate-rev { animation: ring-spin-rev 90s linear infinite; transform-origin: 50% 50%; }
+  @keyframes ring-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes ring-spin-rev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .ring-rotate, .ring-rotate-rev { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+
+  :focus-visible { outline: 3px solid #DB9E77; outline-offset: 3px; }
+</style>
+</head>
+
+<body class="bg-marfil text-profundo antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-marfil/85 backdrop-blur-md border-b border-profundo/10">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 group">
+      <img src="./logo-munay.png" alt="Logo Munay" width="38" height="38" class="rounded-full">
+      <span class="font-display text-2xl font-semibold tracking-tight text-profundo">Munay</span>
+    </a>
+    <a href="#agenda"
+       class="inline-flex items-center rounded-full bg-profundo text-marfil font-body font-semibold text-sm px-5 py-2.5 transition-all duration-300 hover:bg-durazno-dark hover:text-profundo hover:-translate-y-0.5 hover:shadow-lg hover:shadow-durazno/30">
+      Agenda una consultoría
+    </a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32">
+  <!-- forma orgánica de fondo -->
+  <div aria-hidden="true" class="absolute -top-24 -right-40 w-[42rem] h-[42rem] rounded-full bg-oliva/25 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute bottom-0 -left-32 w-[28rem] h-[28rem] rounded-full bg-lavanda/20 blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 sm:px-8 grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <span class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.18em] uppercase text-profundo/70 bg-oliva/20 border border-profundo/10 rounded-full px-4 py-1.5">
+        Consultoría en marketing y métricas
+      </span>
+
+      <h1 class="mt-6 font-display font-semibold text-[2.6rem] leading-[1.08] sm:text-6xl sm:leading-[1.05] text-profundo">
+        Hacemos crecer tu negocio,<br class="hidden sm:block">
+        no solo tu gasto en anuncios.
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-profundo/75 max-w-xl leading-relaxed">
+        Asesoramos a pequeñas y medianas empresas para que tomen decisiones de marketing con datos reales, no con corazonadas — y crezcan de forma orgánica y sostenible.
+      </p>
+
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="#agenda"
+           class="inline-flex items-center gap-2 rounded-full bg-durazno text-profundo font-semibold px-7 py-3.5 shadow-md shadow-durazno/40 transition-all duration-300 hover:bg-profundo hover:text-marfil hover:-translate-y-0.5 hover:shadow-xl">
+          Agenda tu diagnóstico gratuito
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#beneficios" class="text-profundo font-semibold underline decoration-oliva decoration-2 underline-offset-4 hover:decoration-durazno transition-colors">
+          Ver cómo trabajamos
+        </a>
+      </div>
+
+      <p class="mt-8 text-sm text-profundo/60">
+        Más de <span class="font-semibold text-profundo">150 pymes</span> ya confían en Munay para su crecimiento.
+      </p>
+    </div>
+
+    <!-- Elemento de firma: anillos de crecimiento orgánico -->
+    <div class="relative flex justify-center items-center" aria-hidden="true">
+      <svg viewBox="0 0 420 420" class="w-full max-w-md">
+        <g class="ring-rotate">
+          <circle cx="210" cy="210" r="190" fill="none" stroke="#9BAF9D" stroke-width="1.2" stroke-dasharray="2 10" stroke-linecap="round"/>
+        </g>
+        <g class="ring-rotate-rev">
+          <circle cx="210" cy="210" r="150" fill="none" stroke="#B7AAC9" stroke-width="1.6"/>
+        </g>
+        <g class="ring-rotate">
+          <circle cx="210" cy="210" r="112" fill="none" stroke="#DB9E77" stroke-width="1.4" stroke-dasharray="1 8" stroke-linecap="round"/>
+        </g>
+        <circle cx="210" cy="210" r="78" fill="#123C3A"/>
+        <circle cx="210" cy="210" r="78" fill="none" stroke="#F7F4EE" stroke-width="1"/>
+        <text x="210" y="204" text-anchor="middle" fill="#F7F4EE" font-family="Fraunces, serif" font-size="19" font-weight="600">crecimiento</text>
+        <text x="210" y="228" text-anchor="middle" fill="#E7B79A" font-family="Fraunces, serif" font-size="19" font-weight="600" font-style="italic">orgánico</text>
+        <circle class="ring-rotate" cx="400" cy="210" r="4" fill="#DB9E77"/>
+        <circle class="ring-rotate-rev" cx="60" cy="210" r="3" fill="#9BAF9D"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFICIOS ============ -->
+<section id="beneficios" class="py-24 sm:py-32 bg-marfil-dark/60">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8">
+    <div class="max-w-2xl reveal">
+      <span class="text-xs font-semibold tracking-[0.18em] uppercase text-oliva-dark">Por qué Munay</span>
+      <h2 class="mt-4 font-display font-semibold text-3xl sm:text-4xl text-profundo">
+        No vendemos campañas. Construimos criterio para decidir.
+      </h2>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="reveal bg-marfil rounded-3xl p-8 border border-profundo/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-profundo/10">
+        <div class="w-14 h-14 rounded-2xl bg-oliva/25 flex items-center justify-center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M17.7 6.3l-2.8 2.8M9.1 14.9l-2.8 2.8" stroke="#123C3A" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" stroke="#123C3A" stroke-width="1.8"/></svg>
+        </div>
+        <h3 class="mt-6 font-display font-semibold text-xl text-profundo">Decisiones con datos, no con suposiciones</h3>
+        <p class="mt-3 text-profundo/70 leading-relaxed">
+          Analizamos tus métricas reales de ventas, tráfico y clientes para diseñar una estrategia hecha a la medida de tu negocio, no una plantilla genérica.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal bg-marfil rounded-3xl p-8 border border-profundo/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-profundo/10" style="transition-delay:80ms">
+        <div class="w-14 h-14 rounded-2xl bg-lavanda/30 flex items-center justify-center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 14a4 4 0 100-8 4 4 0 000 8z" stroke="#123C3A" stroke-width="1.8"/><path d="M16 14a4 4 0 100-8 4 4 0 000 8z" stroke="#123C3A" stroke-width="1.8"/><path d="M2 21c0-3 2.7-5 6-5s6 2 6 5M10 21c0-3 2.7-5 6-5s6 2 6 5" stroke="#123C3A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="mt-6 font-display font-semibold text-xl text-profundo">Un equipo que se involucra como si fuera suyo</h3>
+        <p class="mt-3 text-profundo/70 leading-relaxed">
+          En Munay no entregamos un reporte y desaparecemos: trabajamos junto a ti en cada decisión, con acompañamiento cercano y sin letra pequeña.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal bg-marfil rounded-3xl p-8 border border-profundo/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-profundo/10" style="transition-delay:160ms">
+        <div class="w-14 h-14 rounded-2xl bg-durazno/30 flex items-center justify-center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20V8" stroke="#123C3A" stroke-width="1.8" stroke-linecap="round"/><path d="M2 20h20" stroke="#123C3A" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="mt-6 font-display font-semibold text-xl text-profundo">Crecimiento que se sostiene en el tiempo</h3>
+        <p class="mt-3 text-profundo/70 leading-relaxed">
+          Construimos presencia de marca y resultados orgánicos que no dependen de gastar cada vez más en publicidad para mantenerse.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIOS ============ -->
+<section id="testimonios" class="py-24 sm:py-32 bg-profundo text-marfil relative overflow-hidden">
+  <div aria-hidden="true" class="absolute -bottom-40 -left-20 w-[34rem] h-[34rem] rounded-full bg-profundo-light/40 blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-6 sm:px-8">
+    <div class="max-w-2xl reveal">
+      <span class="text-xs font-semibold tracking-[0.18em] uppercase text-durazno">Lo que dicen nuestros clientes</span>
+      <h2 class="mt-4 font-display font-semibold text-3xl sm:text-4xl">
+        Pymes reales, resultados reales.
+      </h2>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-6">
+      <!-- Testimonio 1 -->
+      <figure class="reveal bg-marfil text-profundo rounded-3xl p-8 flex flex-col">
+        <div class="flex gap-1 text-durazno-dark" aria-label="5 de 5 estrellas">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="mt-5 text-profundo/80 leading-relaxed flex-1">
+          Antes invertíamos en publicidad sin saber qué funcionaba. Con Munay entendimos por primera vez de dónde venían nuestros clientes y dejamos de gastar a ciegas.
+        </blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-oliva/40 flex items-center justify-center font-display font-semibold text-profundo">R</div>
+          <div>
+            <p class="font-semibold text-sm">Rocío Fernández</p>
+            <p class="text-xs text-profundo/60">Dueña, Panadería Sumaq</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonio 2 -->
+      <figure class="reveal bg-marfil text-profundo rounded-3xl p-8 flex flex-col" style="transition-delay:80ms">
+        <div class="flex gap-1 text-durazno-dark" aria-label="5 de 5 estrellas">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="mt-5 text-profundo/80 leading-relaxed flex-1">
+          Lo que más valoro es que hablan claro. Nos explicaron cada métrica en términos simples y nos ayudaron a priorizar en qué invertir primero.
+        </blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-lavanda/40 flex items-center justify-center font-display font-semibold text-profundo">D</div>
+          <div>
+            <p class="font-semibold text-sm">Diego Salazar</p>
+            <p class="text-xs text-profundo/60">Gerente, Estudio Contable Salazar &amp; Asoc.</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Testimonio 3 -->
+      <figure class="reveal bg-marfil text-profundo rounded-3xl p-8 flex flex-col" style="transition-delay:160ms">
+        <div class="flex gap-1 text-durazno-dark" aria-label="5 de 5 estrellas">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <blockquote class="mt-5 text-profundo/80 leading-relaxed flex-1">
+          En seis meses duplicamos las reservas que llegan por redes, sin subir el presupuesto de anuncios. El seguimiento mensual marcó la diferencia.
+        </blockquote>
+        <figcaption class="mt-6 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-durazno/40 flex items-center justify-center font-display font-semibold text-profundo">C</div>
+          <div>
+            <p class="font-semibold text-sm">Carla Ninatanta</p>
+            <p class="text-xs text-profundo/60">Fundadora, Estudio Wayra Yoga</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-24 sm:py-32">
+  <div class="max-w-3xl mx-auto px-6 sm:px-8">
+    <div class="reveal">
+      <span class="text-xs font-semibold tracking-[0.18em] uppercase text-lavanda-dark">Preguntas frecuentes</span>
+      <h2 class="mt-4 font-display font-semibold text-3xl sm:text-4xl text-profundo">
+        Antes de agendar, resolvamos tus dudas.
+      </h2>
+    </div>
+
+    <div class="mt-12 space-y-4">
+      <details class="reveal group bg-marfil-dark/50 rounded-2xl px-6 py-2 open:bg-oliva/15 transition-colors">
+        <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer list-none font-display font-semibold text-lg text-profundo">
+          ¿Necesito saber de marketing para trabajar con ustedes?
+          <span class="faq-icon shrink-0 w-8 h-8 rounded-full border border-profundo/20 flex items-center justify-center transition-transform duration-300">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#123C3A" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="pb-5 text-profundo/70 leading-relaxed">
+          No. Nuestro trabajo es traducir los datos y las estrategias en decisiones simples, explicadas en lenguaje claro. Tú sigues enfocado en tu negocio; nosotros nos encargamos de la parte técnica.
+        </p>
+      </details>
+
+      <details class="reveal group bg-marfil-dark/50 rounded-2xl px-6 py-2 open:bg-lavanda/15 transition-colors">
+        <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer list-none font-display font-semibold text-lg text-profundo">
+          ¿Cuánto tiempo toma ver resultados?
+          <span class="faq-icon shrink-0 w-8 h-8 rounded-full border border-profundo/20 flex items-center justify-center transition-transform duration-300">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#123C3A" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="pb-5 text-profundo/70 leading-relaxed">
+          Las primeras mejoras en métricas suelen verse entre 4 y 6 semanas. Un crecimiento orgánico sólido y sostenible se construye en un horizonte de 3 a 6 meses de trabajo constante.
+        </p>
+      </details>
+
+      <details class="reveal group bg-marfil-dark/50 rounded-2xl px-6 py-2 open:bg-durazno/15 transition-colors">
+        <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer list-none font-display font-semibold text-lg text-profundo">
+          ¿Trabajan con cualquier tipo de negocio?
+          <span class="faq-icon shrink-0 w-8 h-8 rounded-full border border-profundo/20 flex items-center justify-center transition-transform duration-300">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#123C3A" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+        </summary>
+        <p class="pb-5 text-profundo/70 leading-relaxed">
+          Sí. Trabajamos con pequeñas y medianas empresas de cualquier sector — desde negocios locales hasta servicios profesionales — adaptando la estrategia a tu industria, tu presupuesto y tu etapa de crecimiento.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section id="agenda" class="py-20 sm:py-24">
+  <div class="max-w-5xl mx-auto px-6 sm:px-8">
+    <div class="reveal bg-profundo rounded-[2.5rem] px-8 py-16 sm:px-16 sm:py-20 text-center relative overflow-hidden">
+      <div aria-hidden="true" class="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-durazno/20 blur-3xl"></div>
+      <div aria-hidden="true" class="absolute -bottom-20 -left-20 w-72 h-72 rounded-full bg-lavanda/20 blur-3xl"></div>
+      <h2 class="relative font-display font-semibold text-3xl sm:text-4xl text-marfil max-w-2xl mx-auto">
+        Conversemos sobre el próximo paso de crecimiento de tu negocio.
+      </h2>
+      <p class="relative mt-4 text-marfil/75 max-w-xl mx-auto">
+        Agenda una sesión gratuita de 30 minutos y sal con un diagnóstico claro de tus métricas actuales.
+      </p>
+      <a href="mailto:hola@munay.pe?subject=Quiero%20agendar%20una%20consultor%C3%ADa"
+         class="relative mt-8 inline-flex items-center gap-2 rounded-full bg-durazno text-profundo font-semibold px-8 py-4 transition-all duration-300 hover:bg-marfil hover:-translate-y-0.5 hover:shadow-xl">
+        Agenda tu consultoría gratuita
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-profundo-dark text-marfil/80">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="lg:col-span-2">
+      <div class="flex items-center gap-2">
+        <img src="./logo-munay.png" alt="Logo Munay" width="32" height="32" class="rounded-full">
+        <span class="font-display text-xl font-semibold text-marfil">Munay</span>
+      </div>
+      <p class="mt-4 text-sm text-marfil/60 max-w-xs leading-relaxed">
+        Consultoría de marketing y métricas para pymes que quieren crecer de forma orgánica y sostenible.
+      </p>
+    </div>
+
+    <div>
+      <p class="font-semibold text-sm text-marfil">Navegación</p>
+      <ul class="mt-4 space-y-3 text-sm text-marfil/60">
+        <li><a href="#beneficios" class="hover:text-durazno transition-colors">Beneficios</a></li>
+        <li><a href="#testimonios" class="hover:text-durazno transition-colors">Testimonios</a></li>
+        <li><a href="#faq" class="hover:text-durazno transition-colors">Preguntas frecuentes</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-semibold text-sm text-marfil">Contacto</p>
+      <ul class="mt-4 space-y-3 text-sm text-marfil/60">
+        <li><a href="mailto:hola@munay.pe" class="hover:text-durazno transition-colors">hola@munay.pe</a></li>
+        <li><a href="#" class="hover:text-durazno transition-colors">Instagram</a></li>
+        <li><a href="#" class="hover:text-durazno transition-colors">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-marfil/10">
+    <div class="max-w-6xl mx-auto px-6 sm:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-marfil/50">
+      <p>© 2026 Munay. Todos los derechos reservados.</p>
+      <p>Lima, Perú</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Revelado suave al hacer scroll
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const items = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
